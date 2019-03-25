@@ -222,3 +222,4 @@ SOFTWARE.
 [releases]: https://github.com/hassio-addons/addon-zerotier/releases
 [repository]: https://github.com/hassio-addons/repository
 [semver]: http://semver.org/spec/v2.0.0.htm
+[zerotier]: https://www.zerotier.com/
