@@ -1,0 +1,15 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Community Hass.io Add-ons: ZeroTier One
+# Runs ZeroTier One
+# ==============================================================================
+declare -a options
+
+bashio::log.info "Starting ZeroTier One..."
+
+# Note sure what this does.
+options+=(-U)
+options+=("-p$(bashio::config 'port')")
+
+# Run the ZeroTier One
+exec zerotier-one "${options[@]}"
