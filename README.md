@@ -59,9 +59,9 @@ Example add-on configuration:
 
 ```json
 {
-    "log_level": "info",
+    "network_id":"wgfyiwe73747457",
     "port": 9993,
-    "network_id":"wgfyiwe73747457"
+    "api_auth_token":""
 }
 ```
 
