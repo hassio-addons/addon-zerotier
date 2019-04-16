@@ -14,8 +14,8 @@ RUN \
         git=2.20.1-r0 \
     \
     && apk add --no-cache \
-        libstdc++=8.2.0-r2 \
         libgcc=8.3.0-r0 \
+        libstdc++=8.3.0-r0 \
     \
     && git clone --branch "1.2.12" --depth=1 \
         "https://github.com/zerotier/ZeroTierOne.git" /tmp/zerotier \
