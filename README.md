@@ -59,8 +59,10 @@ Example add-on configuration:
 
 ```json
 {
-    "network_id":"wgfyiwe73747457",
-    "port": 9993,
+    "networks":[
+        "wgfyiwe73747457",
+        "fhu3888892jjfdk"
+    ],
     "api_auth_token":""
 }
 ```
@@ -85,19 +87,12 @@ more severe level, e.g., `debug` also shows `info` messages. By default,
 the `log_level` is set to `info`, which is the recommended setting unless
 you are troubleshooting.
 
-### Option: `network_id`
+### Option: `networks`
 
-Configures the network identifier of the network (VLAN) to join.
+Configures one or more network identifiers of the networks (VLAN) to join.
 You can find this number in your ZeroTier account.
 
 **Note**: _This option support secrets, e.g., `!secret zerotier_network_id`._
-
-### Option: `port`
-
-ZeroTier UDP & TCP port for communications.
-
-You **do not** need to expose this port to the outside world!
-So please **do not** forward this port in your router.
 
 ### Option: `api_auth_token`
 
