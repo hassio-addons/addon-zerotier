@@ -5,7 +5,9 @@
 # ==============================================================================
 readonly private='/ssl/zerotier/identity.secret'
 readonly public='/ssl/zerotier/identity.public'
+declare network
 declare node
+declare token
 
 # Generate identity if it does not exist
 if ! bashio::fs.file_exists "${private}" \
@@ -36,3 +38,27 @@ ln -s "${public}" /var/lib/zerotier-one/identity.public
 
 node=$(cut -d ':' -f1 < "${private}")
 bashio::log.info "ZeroTier node address: ${node}"
+
+# Sets the auth token for the local JSON API
+if bashio::config.has_value 'api_auth_token'; then
+    token=$(bashio::config 'api_auth_token')
+    echo "${token}" > /data/authtoken.secret
+fi
+
+# Ensure network folder exists
+mkdir -p "/var/lib/zerotier-one/networks.d" \
+    || bashio::exit.nok "Could not create networks folder"
+
+# Install user configured/requested packages
+if bashio::config.has_value 'networks'; then
+    for network in $(bashio::config 'networks'); do
+        bashio::log.info "Configuring network: ${network}"
+
+        # Ensure the file exists. An empty file will cause automatic join.
+        touch "/data/network.${network}.conf"
+        ln -s \
+            "/data/network.${network}.conf" \
+            "/var/lib/zerotier-one/networks.d/${network}.conf" \
+                || bashio::exit.nok "Could not create network file"
+    done
+fi

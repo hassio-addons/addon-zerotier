@@ -23,7 +23,6 @@
   "hassio_role": "default",
   "homeassistant_api": false,
   "host_network": true,
-  "apparmor": true,
   "privileged": [
     "NET_ADMIN",
     "SYS_ADMIN"
@@ -36,14 +35,12 @@
     "ssl:rw"
   ],
   "options": {
-    "network_id":"",
-    "port": 9993,
+    "networks":[],
     "api_auth_token": ""
   },
   "schema": {
+    "networks":["match([0-9a-z]{16})"],
     "api_auth_token": "str",
-    "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)?",
-    "network_id":"match([0-9a-z]{16})",
-    "port": "port"
+    "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)?"
   }
 }
