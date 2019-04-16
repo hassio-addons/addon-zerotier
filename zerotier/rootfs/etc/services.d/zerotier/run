@@ -9,7 +9,7 @@ bashio::log.info "Starting ZeroTier One..."
 
 # Note sure what this does.
 options+=(-U)
-options+=("-p$(bashio::config 'port')")
+options+=("-p$(bashio::addon.port 9993)")
 
 # Run the ZeroTier One
 exec zerotier-one "${options[@]}"

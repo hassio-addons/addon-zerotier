@@ -12,6 +12,12 @@
     "armv7",
     "i386"
   ],
+  "ports": {
+    "9993/tcp": 9993
+  },
+  "ports_description": {
+    "9993/tcp": "ZeroTier's primary port"
+  },
   "boot": "auto",
   "hassio_api": true,
   "hassio_role": "default",
