@@ -39,7 +39,7 @@
     "api_auth_token": ""
   },
   "schema": {
-    "networks":["match([0-9a-z]{16})"],
+    "networks":["match(^!secret [a-zA-Z0-9_\\-]+$|[0-9a-z]{16})"],
     "api_auth_token": "str",
     "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)?"
   }

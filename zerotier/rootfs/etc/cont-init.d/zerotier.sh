@@ -51,7 +51,12 @@ mkdir -p "/var/lib/zerotier-one/networks.d" \
 
 # Install user configured/requested packages
 if bashio::config.has_value 'networks'; then
-    for network in $(bashio::config 'networks'); do
+    while read -r network; do
+        # Get network ID from secrets, if it is a secret
+        if bashio::is_secret "${network}"; then
+            network=$(bashio::secret "${network}")
+        fi
+
         bashio::log.info "Configuring network: ${network}"
 
         # Ensure the file exists. An empty file will cause automatic join.
@@ -60,5 +65,6 @@ if bashio::config.has_value 'networks'; then
             "/data/network.${network}.conf" \
             "/var/lib/zerotier-one/networks.d/${network}.conf" \
                 || bashio::exit.nok "Could not create network file"
-    done
+    done <<< "$(bashio::config 'networks')"
+
 fi
