@@ -31,7 +31,6 @@
     "/dev/net/tun:/dev/net/tun:rwm"
   ],
   "map": [
-    "config",
     "ssl:rw"
   ],
   "options": {

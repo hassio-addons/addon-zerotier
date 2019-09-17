@@ -54,11 +54,6 @@ if bashio::config.has_value 'networks'; then
     while read -r network; do
         bashio::log.info "Configuring network: ${network}"
 
-        # Get network ID from secrets, if it is a secret
-        if bashio::is_secret "${network}"; then
-            network=$(bashio::secret "${network}")
-        fi
-
         # Ensure the file exists. An empty file will cause automatic join.
         touch "/data/network.${network}.conf"
         ln -s \
