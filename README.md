@@ -40,16 +40,13 @@ can now add your Home Assistant instance using this add-on.
 The installation of this add-on is pretty straightforward and not different in
 comparison to installing any other Hass.io add-on.
 
-1. [Add our Hass.io add-ons repository][repository] to your Hass.io instance.
-1. Install the "ZeroTier One" add-on.
+1. Search for the "ZeroTier One" add-on in the Hass.io add-on store
+   and install it.
 1. Create a free account at [zerotier.com][zerotier] and get a network ID.
 1. Set the "network_id" add-on option with your network ID.
 1. Start the "ZeroTier One" add-on
 1. Check the logs of the "ZeroTier One" add-on to see if everything went well.
 1. The instance will show up in your ZeroTier account.
-
-**NOTE**: Do not add this repository to Hass.io, please use:
-`https://github.com/hassio-addons/repository`.
 
 ## Configuration
 
