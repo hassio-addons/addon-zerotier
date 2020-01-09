@@ -5,6 +5,9 @@ FROM ${BUILD_FROM}
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
+# We need to copy in the patches need during build
+COPY rootfs/patches /patches
+
 # Setup base
 # hadolint ignore=DL3003
 RUN \
@@ -21,6 +24,7 @@ RUN \
         "https://github.com/zerotier/ZeroTierOne.git" /tmp/zerotier \
     \
     && cd /tmp/zerotier \
+    && patch -p1 < /patches/ZeroTierOne/gcc9-compat.patch \
     && make \
     && make install \
     \
