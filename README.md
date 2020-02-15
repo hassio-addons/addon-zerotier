@@ -54,14 +54,11 @@ comparison to installing any other Hass.io add-on.
 
 Example add-on configuration:
 
-```json
-{
-    "networks":[
-        "wgfyiwe73747457",
-        "fhu3888892jjfdk"
-    ],
-    "api_auth_token":""
-}
+```yaml
+networks:
+  - wgfyiwe73747457
+  - fhu3888892jjfdk
+api_auth_token: ''
 ```
 
 **Note**: _This is just an example, don't copy and paste it! Create your own!_
