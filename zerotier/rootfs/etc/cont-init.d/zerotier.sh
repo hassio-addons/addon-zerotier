@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Community Hass.io Add-ons: ZeroTier One
+# Home Assistant Community Add-on: ZeroTier One
 # Generates an identiy in case it does not exists yet
 # ==============================================================================
 readonly private='/ssl/zerotier/identity.secret'

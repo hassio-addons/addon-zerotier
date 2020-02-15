@@ -1,8 +1,8 @@
 ---
 repository:
-  description: "ZeroTier One - Community Hass.io Add-on for Home Assistant"
+  description: "ZeroTier One - Home Assistant Community Add-ons"
   homepage: https://addons.community
-  topics: zerotier, vpn, peer-to-peer, networking, hassio-addons, hassio, hass, home-assistant, homeassistant
+  topics: zerotier, vpn, peer-to-peer, networking, addon, addons, home-assistant, homeassistant
   private: false
   has_issues: true
   has_projects: false
