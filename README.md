@@ -35,85 +35,7 @@ embedded devices, cloud resources, and apps any way they want anywhere they go.
 It transforms the entire world into a single data center, to which you
 can now add your Home Assistant instance using this add-on.
 
-## Installation
-
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Home Assistant add-on.
-
-1. Search for the "ZeroTier One" add-on in the Supervisor add-on store
-   and install it.
-1. Create a free account at [zerotier.com][zerotier] and get a network ID.
-1. Set the "network_id" add-on option with your network ID.
-1. Start the "ZeroTier One" add-on
-1. Check the logs of the "ZeroTier One" add-on to see if everything went well.
-1. The instance will show up in your ZeroTier account.
-
-## Configuration
-
-**Note**: _Remember to restart the add-on when the configuration is changed._
-
-Example add-on configuration:
-
-```yaml
-networks:
-  - wgfyiwe73747457
-  - fhu3888892jjfdk
-api_auth_token: ''
-```
-
-**Note**: _This is just an example, don't copy and paste it! Create your own!_
-
-### Option: `log_level`
-
-The `log_level` option controls the level of log output by the addon and can
-be changed to be more or less verbose, which might be useful when you are
-dealing with an unknown issue. Possible values are:
-
-- `trace`: Show every detail, like all called internal functions.
-- `debug`: Shows detailed debug information.
-- `info`: Normal (usually) interesting events.
-- `warning`: Exceptional occurrences that are not errors.
-- `error`:  Runtime errors that do not require immediate action.
-- `fatal`: Something went terribly wrong. Add-on becomes unusable.
-
-Please note that each level automatically includes log messages from a
-more severe level, e.g., `debug` also shows `info` messages. By default,
-the `log_level` is set to `info`, which is the recommended setting unless
-you are troubleshooting.
-
-### Option: `networks`
-
-Configures one or more network identifiers of the networks (VLAN) to join.
-You can find this number in your ZeroTier account.
-
-**Note**: _This option support secrets, e.g., `!secret zerotier_network_id`._
-
-### Option: `api_auth_token`
-
-ZeroTier exposes a local HTTP JSON API, which uses the port set using the
-`port` option above. It allows tools and programs to access this ZeroTier
-instance for quering data (or control it).
-
-This token is like a password for accessing that API, you can leave this
-option empty if you are not planning on using this feature.
-
-For more information on the ZeroTier JSON API, [check their documentation][api].
-
-**Note**: _This option support secrets, e.g., `!secret zerotier_token`._
-
-## Changelog & Releases
-
-This repository keeps a change log using [GitHub's releases][releases]
-functionality. The format of the log is based on
-[Keep a Changelog][keepchangelog].
-
-Releases are based on [Semantic Versioning][semver], and use the format
-of ``MAJOR.MINOR.PATCH``. In a nutshell, the version will be incremented
-based on the following:
-
-- ``MAJOR``: Incompatible or major changes.
-- ``MINOR``: Backwards-compatible new features and enhancements.
-- ``PATCH``: Backwards-compatible bugfixes and package updates.
+[:books: Read the full add-on documentation][docs]
 
 ## Support
 
@@ -180,7 +102,6 @@ SOFTWARE.
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
-[api]: https://www.zerotier.com/manual.shtml#4_1
 [armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
 [armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
 [commits-shield]: https://img.shields.io/github/commit-activity/y/hassio-addons/addon-zerotier.svg
@@ -189,7 +110,7 @@ SOFTWARE.
 [discord-ha]: https://discord.gg/c5DvZ4e
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons
-[dockerhub]: https://hub.docker.com/r/hassioaddons/zerotier
+[docs]: https://github.com/hassio-addons/addon-zerotier/blob/master/zerotier/DOCS.md
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
 [forum]: https://community.home-assistant.io/t/home-assistant-community-add-on-zerotier-one/109091?u=frenck
 [frenck]: https://github.com/frenck
@@ -197,10 +118,8 @@ SOFTWARE.
 [github-sponsors]: https://github.com/sponsors/frenck
 [gitlabci-shield]: https://gitlab.com/hassio-addons/addon-zerotier/badges/master/pipeline.svg
 [gitlabci]: https://gitlab.com/hassio-addons/addon-zerotier/pipelines
-[home-assistant]: https://home-assistant.io
 [i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
 [issue]: https://github.com/hassio-addons/addon-zerotier/issues
-[keepchangelog]: http://keepachangelog.com/en/1.0.0/
 [license-shield]: https://img.shields.io/github/license/hassio-addons/addon-zerotier.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2020.svg
 [patreon-shield]: https://frenck.dev/wp-content/uploads/2019/12/patreon.png
@@ -210,5 +129,3 @@ SOFTWARE.
 [releases-shield]: https://img.shields.io/github/release/hassio-addons/addon-zerotier.svg
 [releases]: https://github.com/hassio-addons/addon-zerotier/releases
 [repository]: https://github.com/hassio-addons/repository
-[semver]: http://semver.org/spec/v2.0.0.htm
-[zerotier]: https://www.zerotier.com/
