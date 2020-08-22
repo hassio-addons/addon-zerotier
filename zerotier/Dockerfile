@@ -12,7 +12,7 @@ COPY rootfs/patches /patches
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache --virtual .build-dependencies \
-        build-base=0.5-r1 \
+        build-base=0.5-r2 \
         linux-headers=4.19.36-r0 \
         git=2.24.3-r0 \
     \
