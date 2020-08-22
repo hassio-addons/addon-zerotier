@@ -14,7 +14,7 @@ RUN \
     apk add --no-cache --virtual .build-dependencies \
         build-base=0.5-r2 \
         linux-headers=5.4.5-r1 \
-        git=2.24.3-r0 \
+        git=2.26.2-r0 \
     \
     && apk add --no-cache \
         libgcc=9.2.0-r4 \
