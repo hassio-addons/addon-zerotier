@@ -28,8 +28,8 @@ RUN \
     && make \
     && make install \
     \
-    && rm -f -r /tmp/* \
-    && apk del --purge .build-dependencies
+    && apk del --no-cache --purge .build-dependencies \
+    && rm -f -r /tmp/*
 
 # Copy root filesystem
 COPY rootfs /
