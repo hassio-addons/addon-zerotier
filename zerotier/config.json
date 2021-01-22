@@ -13,10 +13,7 @@
   "ports_description": {
     "9993/tcp": "ZeroTier's primary port"
   },
-  "boot": "auto",
   "hassio_api": true,
-  "hassio_role": "default",
-  "homeassistant_api": false,
   "host_network": true,
   "privileged": ["NET_ADMIN", "SYS_ADMIN"],
   "devices": ["/dev/net/tun:/dev/net/tun:rwm"],
