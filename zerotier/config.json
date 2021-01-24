@@ -13,7 +13,6 @@
   "ports_description": {
     "9993/tcp": "ZeroTier's primary port"
   },
-  "hassio_api": true,
   "host_network": true,
   "privileged": ["NET_ADMIN", "SYS_ADMIN"],
   "devices": ["/dev/net/tun:/dev/net/tun:rwm"],
