@@ -17,7 +17,7 @@ RUN \
         libgcc=10.2.1_pre1-r3 \
         libstdc++=10.2.1_pre1-r3 \
     \
-    && git clone --branch "1.6.2" --depth=1 \
+    && git clone --branch "1.6.3" --depth=1 \
         "https://github.com/zerotier/ZeroTierOne.git" /tmp/zerotier \
     \
     && cd /tmp/zerotier \
