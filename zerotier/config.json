@@ -15,7 +15,7 @@
   },
   "host_network": true,
   "privileged": ["NET_ADMIN", "SYS_ADMIN"],
-  "devices": ["/dev/net/tun:/dev/net/tun:rwm"],
+  "devices": ["/dev/net/tun"],
   "map": ["ssl:rw"],
   "options": {
     "networks": [],
