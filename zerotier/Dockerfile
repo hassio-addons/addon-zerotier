@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:10.2.3
+ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:11.0.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -11,11 +11,11 @@ RUN \
     apk add --no-cache --virtual .build-dependencies \
         build-base=0.5-r2 \
         linux-headers=5.10.41-r0 \
-        git=2.32.0-r0 \
+        git=2.34.1-r0 \
     \
     && apk add --no-cache \
-        libgcc=10.3.1_git20210424-r2 \
-        libstdc++=10.3.1_git20210424-r2 \
+        libgcc=10.3.1_git20211027-r0 \
+        libstdc++=10.3.1_git20211027-r0 \
     \
     && git clone --branch "1.8.3" --depth=1 \
         "https://github.com/zerotier/ZeroTierOne.git" /tmp/zerotier \
