@@ -4,6 +4,7 @@ version: dev
 slug: zerotier
 description: Radically simplify your network with a virtual networking layer that works the same everywhere
 url: https://github.com/hassio-addons/addon-zerotier
+codenotary: codenotary@frenck.dev
 startup: services
 init: false
 arch:
