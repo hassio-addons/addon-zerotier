@@ -10,14 +10,17 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN \
     apk add --no-cache --virtual .build-dependencies \
         build-base=0.5-r2 \
-        linux-headers=5.10.41-r0 \
+        cargo=1.56.1-r0 \
         git=2.34.1-r0 \
+        linux-headers=5.10.41-r0 \
+        openssl-dev=1.1.1l-r8 \
+        pkgconf=1.8.0-r0 \
     \
     && apk add --no-cache \
         libgcc=10.3.1_git20211027-r0 \
         libstdc++=10.3.1_git20211027-r0 \
     \
-    && git clone --branch "1.8.4" --depth=1 \
+    && git clone --branch "1.8.5" --depth=1 \
         "https://github.com/zerotier/ZeroTierOne.git" /tmp/zerotier \
     \
     && cd /tmp/zerotier \
@@ -25,7 +28,9 @@ RUN \
     && make install \
     \
     && apk del --no-cache --purge .build-dependencies \
-    && rm -f -r /tmp/*
+    && rm -f -r \
+        /root/.cargo \
+        /tmp/*
 
 # Copy root filesystem
 COPY rootfs /
