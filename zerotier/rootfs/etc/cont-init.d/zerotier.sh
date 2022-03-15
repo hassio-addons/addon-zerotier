@@ -42,7 +42,7 @@ bashio::log.info "ZeroTier node address: ${node}"
 # Sets the auth token for the local JSON API
 if bashio::config.has_value 'api_auth_token'; then
     token=$(bashio::config 'api_auth_token')
-    echo "${token}" > /data/authtoken.secret
+    echo "${token}" > /var/lib/zerotier-one/authtoken.secret
 fi
 
 # Ensure network folder exists
