@@ -24,7 +24,7 @@ RUN \
         "https://github.com/zerotier/ZeroTierOne.git" /tmp/zerotier \
     \
     && cd /tmp/zerotier \
-    && make \
+    && CARGO_NET_GIT_FETCH_WITH_CLI=true make \
     && make install \
     \
     && apk del --no-cache --purge .build-dependencies \
