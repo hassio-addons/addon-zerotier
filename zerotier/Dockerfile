@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:11.1.2
+ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:12.0.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -10,15 +10,15 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN \
     apk add --no-cache --virtual .build-dependencies \
         build-base=0.5-r2 \
-        cargo=1.56.1-r0 \
-        git=2.34.2-r0 \
-        linux-headers=5.10.41-r0 \
-        openssl-dev=1.1.1n-r0 \
+        cargo=1.60.0-r2 \
+        git=2.36.1-r0 \
+        linux-headers=5.16.7-r1 \
+        openssl-dev=1.1.1o-r0 \
         pkgconf=1.8.0-r0 \
     \
     && apk add --no-cache \
-        libgcc=10.3.1_git20211027-r0 \
-        libstdc++=10.3.1_git20211027-r0 \
+        libgcc=11.2.1_git20220219-r2 \
+        libstdc++=11.2.1_git20220219-r2 \
     \
     && git clone --branch "1.8.9" --depth=1 \
         "https://github.com/zerotier/ZeroTierOne.git" /tmp/zerotier \
