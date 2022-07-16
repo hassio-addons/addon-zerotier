@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:12.0.0
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:12.2.1
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -9,11 +9,11 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache --virtual .build-dependencies \
-        build-base=0.5-r2 \
+        build-base=0.5-r3 \
         cargo=1.60.0-r2 \
-        git=2.36.1-r0 \
+        git=2.36.2-r0 \
         linux-headers=5.16.7-r1 \
-        openssl-dev=1.1.1o-r0 \
+        openssl-dev=1.1.1q-r0 \
         pkgconf=1.8.0-r0 \
     \
     && apk add --no-cache \
