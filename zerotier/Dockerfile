@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:13.0.0
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:13.1.3
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -11,10 +11,10 @@ RUN \
     apk add --no-cache --virtual .build-dependencies \
         build-base=0.5-r3 \
         cargo=1.64.0-r2 \
-        git=2.38.2-r0 \
+        git=2.38.4-r1 \
         linux-headers=5.19.5-r0 \
-        openssl-dev=3.0.7-r0 \
-        pkgconf=1.9.3-r0 \
+        openssl-dev=3.0.8-r0 \
+        pkgconf=1.9.4-r0 \
     \
     && apk add --no-cache \
         libgcc=12.2.1_git20220924-r4 \
