@@ -6,6 +6,7 @@ FROM ${BUILD_FROM}
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
+ARG ZERO_TIER_ONE_VERSION="1.10.4"
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache --virtual .build-dependencies \
@@ -20,7 +21,7 @@ RUN \
         libgcc=12.2.1_git20220924-r4 \
         libstdc++=12.2.1_git20220924-r4 \
     \
-    && git clone --branch "1.10.4" --depth=1 \
+    && git clone --branch "${ZERO_TIER_ONE_VERSION}" --depth=1 \
         "https://github.com/zerotier/ZeroTierOne.git" /tmp/zerotier \
     \
     && cd /tmp/zerotier \
