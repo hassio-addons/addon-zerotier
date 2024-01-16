@@ -14,7 +14,7 @@ RUN \
         cargo=1.72.1-r0 \
         git=2.43.0-r0 \
         linux-headers=6.5-r0 \
-        openssl-dev=3.1.4-r3 \
+        openssl-dev=3.1.4-r4 \
         pkgconf=2.1.0-r0 \
     \
     && apk add --no-cache \
