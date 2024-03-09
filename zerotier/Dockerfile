@@ -11,7 +11,7 @@ ARG ZERO_TIER_ONE_VERSION="1.12.2"
 RUN \
     apk add --no-cache --virtual .build-dependencies \
         build-base=0.5-r3 \
-        cargo=1.73.0-r1 \
+        cargo=1.75.0-r0 \
         git=2.43.0-r0 \
         linux-headers=6.5-r0 \
         openssl-dev=3.1.4-r5 \
