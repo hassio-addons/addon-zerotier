@@ -28,6 +28,6 @@ options:
   api_auth_token: ""
 schema:
   networks:
-    - match(^!secret [a-zA-Z0-9_\-]+$|[0-9a-z]{16})
+    - str
   api_auth_token: str
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
