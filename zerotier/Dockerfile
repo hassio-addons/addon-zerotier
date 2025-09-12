@@ -6,7 +6,7 @@ FROM ${BUILD_FROM}
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
-ARG ZERO_TIER_ONE_VERSION="1.14.2"
+ARG ZERO_TIER_ONE_VERSION="1.16.0"
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache --virtual .build-dependencies \
