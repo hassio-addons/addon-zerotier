@@ -9,7 +9,6 @@ init: false
 arch:
   - aarch64
   - amd64
-  - armv7
 ports:
   9993/tcp: 9993
 ports_description:
