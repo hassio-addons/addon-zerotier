@@ -1,7 +1,7 @@
 #!/command/with-contenv bashio
 # shellcheck shell=bash
 # ==============================================================================
-# Home Assistant Community Add-on: ZeroTier One
+# Home Assistant Community App: ZeroTier One
 # Generates an identiy in case it does not exists yet
 # ==============================================================================
 readonly private='/ssl/zerotier/identity.secret'
