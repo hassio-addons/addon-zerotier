@@ -11,15 +11,15 @@ ARG ZERO_TIER_ONE_VERSION="1.16.0"
 RUN \
     apk add --no-cache --virtual .build-dependencies \
         build-base=0.5-r3 \
-        cargo=1.87.0-r0 \
-        git=2.49.1-r0 \
-        linux-headers=6.14.2-r0 \
-        openssl-dev=3.5.4-r0 \
-        pkgconf=2.4.3-r0 \
+        cargo=1.91.1-r0 \
+        git=2.52.0-r0 \
+        linux-headers=6.16.12-r0 \
+        openssl-dev=3.5.5-r0 \
+        pkgconf=2.5.1-r0 \
     \
     && apk add --no-cache \
-        libgcc=14.2.0-r6 \
-        libstdc++=14.2.0-r6 \
+        libgcc=15.2.0-r2 \
+        libstdc++=15.2.0-r2 \
     \
     && git clone --branch "${ZERO_TIER_ONE_VERSION}" --depth=1 \
         "https://github.com/zerotier/ZeroTierOne.git" /tmp/zerotier \
